@@ -15,7 +15,7 @@ export function SiteHeader() {
       <a className="brand brand--header" href="#top" onClick={close} aria-label="NC Delights home">
         <Image className="brand__logo" src="/assets/brand/nc-delights-sweet-treats.jpeg" alt="NC Delights Sweet Treats, established 2026" width={2120} height={840} priority />
       </a>
-      <nav className={isOpen ? 'site-nav site-nav--open' : 'site-nav'} aria-label="Main navigation">
+      <nav id="site-nav" className={isOpen ? 'site-nav site-nav--open' : 'site-nav'} aria-label="Main navigation">
         <a href="#featured" onClick={close}>Featured</a>
         <a href="#menu" onClick={close}>Menu</a>
         <a href="#story" onClick={close}>Our kitchen</a>

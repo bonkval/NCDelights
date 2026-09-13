@@ -80,18 +80,16 @@ export function ParallaxComponent() {
         <div className="hero__image hero__image--front" data-parallax-layer="front" aria-hidden="true">
           <Image src="/assets/products/cookies-oreo.jpeg" alt="" fill sizes="38vw" />
         </div>
-        <p className="hero__edition" data-parallax-layer="middle">Small batch / 2026</p>
         <div className="hero__copy" data-parallax-layer="copy">
           <p className="eyebrow">Handmade in small batches</p>
-          <h1 id="hero-title">Baked for the <em>soft</em> moments.</h1>
-          <p className="hero__lede">Comforting cookies, tender loaves, and sweet little celebrations—made with care by NC Delights.</p>
+          <h1 id="hero-title"><span>Baked for the</span><span><em>soft</em> moments.</span></h1>
+          <p className="hero__lede">Comforting cookies, tender loaves, and sweet celebrations, all made with care.</p>
           <div className="hero__actions">
             <a className="button button--dark" href="#menu">See what&apos;s baking <span aria-hidden="true">↓</span></a>
             <a className="text-link" href="https://www.messenger.com/t/1055749294291740" target="_blank" rel="noreferrer">Order via Messenger <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
-      <a className="hero__scroll" href="#featured" aria-label="Scroll to featured treats"><span>Scroll to taste</span><i aria-hidden="true" /></a>
     </section>
   );
 }

@@ -10,7 +10,6 @@ export function ProductCard({ product, compact = false }: { product: Product; co
       <div className="product-card__image-wrap">
         <Image className="product-card__image" src={product.image} alt={product.imageAlt} fill sizes="(max-width: 720px) 94vw, (max-width: 1100px) 47vw, 31vw" />
         {product.badge ? <span className={product.badge === 'New' ? 'product-badge product-badge--new' : 'product-badge'}>{product.badge}</span> : null}
-        <span className="product-card__category">{product.category}</span>
       </div>
       <div className="product-card__body">
         <div className="product-card__title-row">
