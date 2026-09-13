@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# local environment files
+.env*
+
+# Supplied source photography lives at the project root. Production-selected copies live in public/assets.
+/IMG_*.jpeg
+/IMG_*.jpg
+/IMG_*.png
+/1612857A-2AEC-4079-AC7A-43A594086F72.jpeg
+
+# TypeScript
+*.tsbuildinfo
