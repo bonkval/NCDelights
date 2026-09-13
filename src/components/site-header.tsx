@@ -13,7 +13,13 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand brand--header" href="#top" onClick={close} aria-label="NC Delights home">
-        <Image className="brand__logo" src="/assets/brand/nc-delights-sweet-treats.jpeg" alt="NC Delights Sweet Treats, established 2026" width={2120} height={840} priority />
+        <span className="brand__seal" aria-hidden="true">
+          <Image className="brand__logo" src="/assets/brand/nc-cookie-seal.png" alt="" width={1280} height={1280} priority />
+        </span>
+        <span className="brand__wordmark">
+          <span className="brand__name">NC Delights</span>
+          <span className="brand__sub">Sweet treats</span>
+        </span>
       </a>
       <nav id="site-nav" className={isOpen ? 'site-nav site-nav--open' : 'site-nav'} aria-label="Main navigation">
         <a href="#featured" onClick={close}>Featured</a>
