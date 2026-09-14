@@ -54,7 +54,7 @@ export function MenuGallery({ products, categories }: { products: Product[]; cat
       <div className="treat-gallery section-shell" aria-label="Baked goods gallery">
         {products.map((product, index) => (
           <article id={`treat-${product.id}`} className={selected === product.id ? `treat-shot treat-shot--${(index % 4) + 1} treat-shot--selected` : `treat-shot treat-shot--${(index % 4) + 1}`} key={product.id} tabIndex={-1}>
-            <div className="treat-shot__image"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 720px) 92vw, 46vw" /></div>
+            <div className="treat-shot__image"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 720px) 92vw, (max-width: 960px) 47vw, 31vw" /></div>
             <div className="treat-shot__caption">
               <div><h3>{product.name}</h3><p>{product.description}</p></div>
               <a href={messengerUrl} target="_blank" rel="noreferrer" aria-label={`Order ${product.name} through Messenger`}><MessageCircle aria-hidden="true" /> <span>Order</span> <ArrowUpRight aria-hidden="true" /></a>
