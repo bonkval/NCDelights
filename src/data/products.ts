@@ -172,14 +172,14 @@ export const products: Product[] = [
     id: 'choco-banana-cream-cheese-muffin',
     name: 'Choco Banana Cream Cheese Muffin',
     slug: 'choco-banana-cream-cheese-muffin',
-    description: 'Soft, moist banana muffins, filled with cream cheese and chocolate chips.',
+    description: 'Soft, moist banana muffins topped with cream cheese and chocolate pieces.',
     category: 'Loaves & muffins',
     image: '/assets/products/muffins.png',
     imageAlt: 'Choco banana cream cheese muffins in patterned baking cups',
     prices: [{ label: '4 pieces', value: '₱250' }],
     badge: 'New',
     featured: true,
-    note: 'Soft, moist and loaded with chocolate chips.',
+    note: 'Soft, moist, and topped with cream cheese and chocolate pieces.',
   },
 ];
 
