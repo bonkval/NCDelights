@@ -27,8 +27,8 @@ export const products: Product[] = [
     slug: 'dubai-chewy-pistachio-cookie',
     description: 'A generously sized, bakery-soft cookie with a rich pistachio-inspired finish.',
     category: 'Cookies',
-    image: '/assets/products/cookies-signature.jpeg',
-    imageAlt: 'Assorted freshly baked cookies on a cooling rack',
+    image: '/assets/products/dubai-chewy-cookie-campaign.png',
+    imageAlt: 'Dubai chewy pistachio cookie with a rich pistachio filling',
     prices: [
       { label: '1 piece', value: '₱110' },
       { label: '4 pieces', value: '₱400' },
