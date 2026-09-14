@@ -42,8 +42,8 @@ button { color: inherit; font: inherit; }
 .brand__seal { display: grid; width: 2.45rem; height: 2.45rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--butter-light); transition: transform .45s cubic-bezier(.22,1,.36,1), background-color .3s ease; }
 .brand:hover .brand__seal { background: #e5bc8a; transform: rotate(-9deg) scale(1.04); }
 .brand__logo { display: block; width: 82%; height: 82%; object-fit: contain; }
-.brand__wordmark { display: grid; gap: .08rem; }
-.brand__name { font-family: var(--display); font-size: .95rem; font-weight: 700; letter-spacing: -.025em; line-height: .9; }
+.brand__wordmark { display: grid; gap: .18rem; }
+.brand__name { font-family: var(--display); font-size: .95rem; font-weight: 700; letter-spacing: -.025em; line-height: 1; }
 .brand__sub { color: var(--caramel); font-size: .48rem; font-weight: 760; letter-spacing: .13em; line-height: 1; text-transform: uppercase; }
 .site-nav { display: flex; align-items: center; gap: 1.35rem; padding-inline: .65rem; }
 .site-nav a { position: relative; padding: .62rem 0; color: var(--ink-soft); font-size: .66rem; font-weight: 730; letter-spacing: .04em; }
@@ -207,15 +207,13 @@ button { color: inherit; font: inherit; }
 .reveal.will-reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .75s cubic-bezier(.22, 1, .36, 1); }
 .reveal.is-revealed { opacity: 1; transform: none; }
 
-/* A fixed edible seal keeps ordering present without turning the header into an ad bar. */
-.order-seal { position: fixed; z-index: 28; left: 1.5rem; bottom: 1.5rem; display: grid; width: 6.2rem; aspect-ratio: 1; place-items: center; border: .3rem solid var(--cream); border-radius: 50%; color: var(--paper); background: var(--espresso); box-shadow: 0 18px 45px rgba(54,22,10,.24); transition: transform .35s cubic-bezier(.22,1,.36,1); }
-.order-seal:hover { transform: rotate(-5deg) scale(1.06); }
+/* A clear, floating cookie keeps ordering available without a competing badge or label. */
+.order-seal { position: fixed; z-index: 28; left: 1.5rem; bottom: 1.5rem; display: grid; width: 7rem; aspect-ratio: 1; place-items: center; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.order-seal:hover { transform: scale(1.06); }
 .order-seal:active { transform: scale(.96); }
-.order-seal__type { position: absolute; inset: .45rem; animation: seal-spin 16s linear infinite; }
-.order-seal__type span { position: absolute; top: 0; left: 50%; height: 100%; font-size: .46rem; font-weight: 850; letter-spacing: .05em; transform-origin: 0 2.65rem; }
-.order-seal__cookie { position: relative; width: 3.4rem; aspect-ratio: 1; filter: drop-shadow(0 5px 7px rgba(26,9,3,.3)); transform: rotate(8deg); }
+.order-seal__cookie { position: relative; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 8px 10px rgba(26,9,3,.28)); animation: cookie-spin 7s linear infinite; }
 .order-seal__cookie img { object-fit: contain; }
-@keyframes seal-spin { to { transform: rotate(360deg); } }
+@keyframes cookie-spin { to { transform: rotate(360deg); } }
 
 /* The catalog separates fast price scanning from visual product discovery. */
 .catalog { position: relative; overflow: hidden; padding-block: clamp(7rem,12vw,11rem); background: var(--cream); }
@@ -301,9 +299,10 @@ button { color: inherit; font: inherit; }
   .site-header { top: .65rem; display: flex; width: calc(100% - 1.25rem); min-height: 3.45rem; padding: .35rem .4rem .35rem .45rem; border-radius: 999px; }
   .brand--header { gap: .48rem; }
   .brand__seal { width: 2.35rem; height: 2.35rem; }
-  .brand__name { font-size: .9rem; }
+  .brand__wordmark { gap: .22rem; }
+  .brand__name { font-size: .9rem; line-height: 1.05; }
   .header-cta { display: none; }
-  .menu-toggle { display: grid; width: 2.55rem; height: 2.55rem; place-items: center; padding: 0; border: 0; border-radius: 50%; color: var(--paper); background: var(--espresso); }
+  .menu-toggle { display: grid; width: 2.55rem; height: 2.55rem; margin-left: auto; place-items: center; padding: 0; border: 0; border-radius: 50%; color: var(--paper); background: var(--espresso); }
   .menu-toggle:active { transform: scale(.94); }
   .site-nav { position: absolute; top: calc(100% + .5rem); right: 0; left: auto; display: grid; width: min(18rem, 100%); gap: .15rem; padding: .5rem; border: 1px solid rgba(255,255,255,.7); border-radius: .9rem; background: rgba(255,250,241,.96); box-shadow: 0 16px 36px rgba(47,24,14,.12); transform: none; opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; transform-origin: top right; transform: scale(.96); }
   .site-nav--open { opacity: 1; pointer-events: auto; transform: scale(1); }
@@ -358,9 +357,7 @@ button { color: inherit; font: inherit; }
   .site-footer__main { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-contact { grid-column: auto; grid-auto-flow: row; gap: .85rem; }
   .site-footer__bottom { display: grid; gap: .65rem; }
-  .order-seal { left: 1rem; bottom: 1rem; width: 5.2rem; }
-  .order-seal__type span { font-size: .4rem; transform-origin: 0 2.3rem; }
-  .order-seal__cookie { width: 3rem; }
+  .order-seal { left: .85rem; bottom: .85rem; width: 5.8rem; }
   .catalog { padding-block: 6.5rem; }
   .catalog__header { grid-template-columns: 1fr; gap: 1.25rem; }
   .catalog__header h2 { font-size: clamp(3.4rem,15vw,5rem); }
@@ -388,7 +385,7 @@ button { color: inherit; font: inherit; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
   .reveal, .reveal.will-reveal { opacity: 1; transform: none; }
   .hero__image--back, .hero__image--front, .hero__ring { transform: none; }
-  .order-seal__type { animation: none; }
+  .order-seal__cookie { animation: none; }
   .catalog__cutout, .social-ribbon { transform: none; }
   .cookie-handoff__frame { clip-path: none; }
   .cookie-handoff__frame img { transform: none; }

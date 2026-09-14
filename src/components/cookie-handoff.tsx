@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,7 +12,7 @@ export function CookieHandoff() {
   const firstLineRef = useRef<HTMLParagraphElement>(null);
   const secondLineRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -34,6 +34,7 @@ export function CookieHandoff() {
         .fromTo(firstLineRef.current, { xPercent: -18, opacity: 0 }, { xPercent: 0, opacity: 1, duration: .5 }, .25)
         .to(firstLineRef.current, { yPercent: -30, opacity: 0, duration: .35 }, 1.05)
         .fromTo(secondLineRef.current, { yPercent: 35, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .55 }, 1.15);
+      ScrollTrigger.refresh();
     }, section);
 
     return () => context.revert();

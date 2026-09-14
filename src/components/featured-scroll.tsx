@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowUpRight, MessageCircle } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Product } from '@/data/products';
@@ -13,10 +13,10 @@ export function FeaturedScroll({ products }: { products: Product[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     const track = trackRef.current;
-    if (!section || !track || window.innerWidth < 900 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!section || !track || window.innerWidth <= 960 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     gsap.registerPlugin(ScrollTrigger);
     const context = gsap.context(() => {
@@ -33,6 +33,7 @@ export function FeaturedScroll({ products }: { products: Product[] }) {
           invalidateOnRefresh: true,
         },
       });
+      ScrollTrigger.refresh();
     }, section);
     return () => context.revert();
   }, []);

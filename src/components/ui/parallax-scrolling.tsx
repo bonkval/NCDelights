@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
@@ -12,7 +12,7 @@ const isReducedMotion = () =>
 export function ParallaxComponent() {
   const rootRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isReducedMotion()) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -53,6 +53,7 @@ export function ParallaxComponent() {
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(onTick);
     gsap.ticker.lagSmoothing(0);
+    ScrollTrigger.refresh();
 
     return () => {
       context.revert();
