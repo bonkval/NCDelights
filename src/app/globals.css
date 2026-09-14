@@ -207,11 +207,11 @@ button { color: inherit; font: inherit; }
 .reveal.will-reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .75s cubic-bezier(.22, 1, .36, 1); }
 .reveal.is-revealed { opacity: 1; transform: none; }
 
-/* A clear, floating cookie keeps ordering available without a competing badge or label. */
-.order-seal { position: fixed; z-index: 28; left: 1.5rem; bottom: 1.5rem; display: grid; width: 7rem; aspect-ratio: 1; place-items: center; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+/* A subtle badge grounds the floating cookie without competing lettering. */
+.order-seal { position: fixed; z-index: 28; left: 1.5rem; bottom: 1.5rem; display: grid; width: 7.35rem; aspect-ratio: 1; place-items: center; border: 1px solid rgba(48,24,15,.72); border-radius: 50%; background: rgba(255,250,241,.84); box-shadow: 0 12px 28px rgba(54,22,10,.2), inset 0 0 0 .3rem rgba(212,163,115,.25); backdrop-filter: blur(8px); transition: transform .35s cubic-bezier(.22,1,.36,1); }
 .order-seal:hover { transform: scale(1.06); }
 .order-seal:active { transform: scale(.96); }
-.order-seal__cookie { position: relative; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 8px 10px rgba(26,9,3,.28)); animation: cookie-spin 7s linear infinite; }
+.order-seal__cookie { position: relative; z-index: 1; width: 5.55rem; aspect-ratio: 1; filter: drop-shadow(0 7px 8px rgba(26,9,3,.28)); animation: cookie-spin 7s linear infinite; }
 .order-seal__cookie img { object-fit: contain; }
 @keyframes cookie-spin { to { transform: rotate(360deg); } }
 
@@ -357,7 +357,8 @@ button { color: inherit; font: inherit; }
   .site-footer__main { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-contact { grid-column: auto; grid-auto-flow: row; gap: .85rem; }
   .site-footer__bottom { display: grid; gap: .65rem; }
-  .order-seal { left: .85rem; bottom: .85rem; width: 5.8rem; }
+  .order-seal { left: .85rem; bottom: .85rem; width: 6.1rem; }
+  .order-seal__cookie { width: 4.6rem; }
   .catalog { padding-block: 6.5rem; }
   .catalog__header { grid-template-columns: 1fr; gap: 1.25rem; }
   .catalog__header h2 { font-size: clamp(3.4rem,15vw,5rem); }
