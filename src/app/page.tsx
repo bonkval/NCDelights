@@ -9,6 +9,7 @@ import { OrderSeal } from '@/components/order-seal';
 import { SectionReveal } from '@/components/section-reveal';
 import { SiteHeader } from '@/components/site-header';
 import { SocialSection } from '@/components/social-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 import { categories, products } from '@/data/products';
 
 const messengerUrl = 'https://www.messenger.com/t/1055749294291740';
@@ -22,6 +23,7 @@ export default function Home() {
       <ParallaxComponent />
 
       <FeaturedScroll products={featuredProducts} />
+      <TestimonialsSection />
       <ImageStreamSection />
 
       <section className="manifesto" id="story" aria-labelledby="story-title">
