@@ -207,12 +207,21 @@ button { color: inherit; font: inherit; }
 .reveal.will-reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .75s cubic-bezier(.22, 1, .36, 1); }
 .reveal.is-revealed { opacity: 1; transform: none; }
 
-/* A subtle badge grounds the floating cookie without competing lettering. */
-.order-seal { position: fixed; z-index: 28; left: 1.5rem; bottom: 1.5rem; display: grid; width: 7.35rem; aspect-ratio: 1; place-items: center; border: 1px solid rgba(48,24,15,.72); border-radius: 50%; background: rgba(255,250,241,.84); box-shadow: 0 12px 28px rgba(54,22,10,.2), inset 0 0 0 .3rem rgba(212,163,115,.25); backdrop-filter: blur(8px); transition: transform .35s cubic-bezier(.22,1,.36,1); }
-.order-seal:hover { transform: scale(1.06); }
-.order-seal:active { transform: scale(.96); }
-.order-seal__cookie { position: relative; z-index: 1; width: 5.55rem; aspect-ratio: 1; filter: drop-shadow(0 7px 8px rgba(26,9,3,.28)); animation: cookie-spin 7s linear infinite; }
+/* A pastry-stamp action keeps ordering visible while feeling native to the bakery identity. */
+.order-seal { position: fixed; z-index: 28; left: 1.25rem; bottom: 1.25rem; display: flex; align-items: center; isolation: isolate; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.order-seal:hover { transform: translateY(-.2rem); }
+.order-seal:active { transform: translateY(.05rem) scale(.98); }
+.order-seal__cookie-shell { position: relative; z-index: 2; display: grid; width: 6rem; aspect-ratio: 1; place-items: center; border: 1px solid rgba(255,250,241,.78); border-radius: 50%; background: radial-gradient(circle at 34% 28%, #f6d6ab 0 8%, #ca7d43 42%, #6a301b 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.38), inset 0 0 0 .32rem rgba(48,24,15,.24), 0 .8rem 1.8rem rgba(54,22,10,.28); transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.order-seal__cookie-shell::after { position: absolute; inset: .45rem; border: 1px dashed rgba(255,250,241,.48); border-radius: inherit; content: ""; }
+.order-seal:hover .order-seal__cookie-shell { transform: rotate(-7deg) scale(1.04); }
+.order-seal__cookie { position: relative; z-index: 1; width: 4.55rem; aspect-ratio: 1; filter: drop-shadow(0 6px 7px rgba(26,9,3,.32)); animation: cookie-spin 8s linear infinite; }
 .order-seal__cookie img { object-fit: contain; }
+.order-seal__label { display: grid; grid-template-columns: 1fr auto; gap: .1rem .65rem; min-width: 9.6rem; margin-left: -.8rem; padding: .72rem .9rem .72rem 1.45rem; border: 1px solid rgba(48,24,15,.16); border-radius: 0 .8rem .8rem 0; color: var(--espresso); background: var(--paper); box-shadow: 0 .65rem 1.5rem rgba(54,22,10,.16); transition: padding .3s cubic-bezier(.22,1,.36,1), background-color .25s ease; }
+.order-seal:hover .order-seal__label { padding-right: 1.15rem; background: #fff2de; }
+.order-seal__label > span { grid-column: 1 / -1; color: var(--caramel); font-size: .5rem; font-weight: 850; letter-spacing: .09em; line-height: 1; text-transform: uppercase; }
+.order-seal__label strong { font-family: var(--display); font-size: 1.05rem; font-weight: 650; letter-spacing: -.035em; line-height: 1; }
+.order-seal__label svg { align-self: end; width: .95rem; height: .95rem; color: var(--caramel); transition: transform .25s ease; }
+.order-seal:hover .order-seal__label svg { transform: translate(.12rem,-.12rem); }
 @keyframes cookie-spin { to { transform: rotate(360deg); } }
 
 /* The catalog separates fast price scanning from visual product discovery. */
@@ -374,8 +383,11 @@ button { color: inherit; font: inherit; }
   .site-footer__main { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-contact { grid-column: auto; grid-auto-flow: row; gap: .85rem; }
   .site-footer__bottom { display: grid; gap: .65rem; }
-  .order-seal { left: .85rem; bottom: .85rem; width: 6.1rem; }
-  .order-seal__cookie { width: 4.6rem; }
+  .order-seal { left: .75rem; bottom: .75rem; }
+  .order-seal__cookie-shell { width: 5.2rem; }
+  .order-seal__cookie { width: 3.9rem; }
+  .order-seal__label { min-width: 8.6rem; padding-block: .62rem; padding-left: 1.25rem; }
+  .order-seal__label strong { font-size: .94rem; }
   .catalog { padding-block: 6.5rem; }
   .catalog__header { grid-template-columns: 1fr; gap: 1.25rem; }
   .catalog__header h2 { font-size: clamp(3.4rem,15vw,5rem); }
