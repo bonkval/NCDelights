@@ -15,7 +15,6 @@ export function TestimonialsSection() {
     <section className="testimonials" aria-labelledby="testimonials-title">
       <header className="testimonials__header section-shell">
         <div><p className="eyebrow">Kind words, shared</p><h2 id="testimonials-title">Loved down to the last crumb.</h2></div>
-        <p>Real messages from people who have shared our bakes.</p>
       </header>
       <div className="testimonials__grid section-shell">
         {testimonials.map((testimonial, index) => (

@@ -23,7 +23,6 @@ export default function Home() {
       <ParallaxComponent />
 
       <FeaturedScroll products={featuredProducts} />
-      <TestimonialsSection />
       <ImageStreamSection />
 
       <section className="manifesto" id="story" aria-labelledby="story-title">
@@ -42,6 +41,7 @@ export default function Home() {
       <CookieHandoff />
       <MenuGallery products={products} categories={categories} />
       <SocialSection />
+      <TestimonialsSection />
 
       <section className="order-cta" aria-labelledby="order-title">
         <div className="order-cta__blossom order-cta__blossom--one" aria-hidden="true" />
