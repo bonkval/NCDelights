@@ -43,7 +43,6 @@ export function FeaturedScroll({ products }: { products: Product[] }) {
       <div className="featured-story__track" ref={trackRef}>
         <header className="featured-story__intro">
           <h2 id="featured-title">Meet the bakes people ask for again.</h2>
-          <p>Four favourites, each given room to be noticed.</p>
         </header>
         {products.map((product, index) => (
           <article className={`feature-scene feature-scene--${index + 1}`} key={product.id}>
